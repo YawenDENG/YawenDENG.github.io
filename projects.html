@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js demo-5">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Yawen | Simona</title>
+		<meta name="description" content="DENG Yawen's portfolio" />
+		<meta name="keywords" content="portfolio, website, app, UI design, web, page, book, perspective" />
+		<meta name="author" content="DENG Yawen" />
+		<link rel="shortcut icon" href="images/yawen.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+		<!-- custom demo style -->
+		<link rel="stylesheet" type="text/css" href="css/projects.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>DENG Yawen <span>Programmer & Designer</span></h1>	
+				<nav class="codrops-demos">
+					<a href="index.html">About Me</a>
+					<a class="current-demo" href="projects.html">Projects</a>
+				</nav>
+			</header>
+			<div class="main clearfix">
+				<ul class="bb-custom-grid" id="bb-custom-grid">
+					<li>
+						<a href="http://v.youku.com/v_show/id_XNjkzNTM5MzEy.html"><h3>Pathout</h3></a>
+						<div class="bb-bookblock">
+							<div class="bb-item"><a href="http://v.youku.com/v_show/id_XNjkzNTM5MzEy.html"><img src="images/pathout/pathout1.jpg" alt="pathout1"/></a></div>
+							<div class="bb-item"><a href="http://v.youku.com/v_show/id_XNjkzNTM5MzEy.html"><img src="images/pathout/pathout2.jpg" alt="pathout2"/></a></div>
+							<div class="bb-item"><a href="http://v.youku.com/v_show/id_XNjkzNTM5MzEy.html"><img src="images/pathout/pathout3.jpg" alt="pathout3"/></a></div>
+							<div class="bb-item"><a href="http://v.youku.com/v_show/id_XNjkzNTM5MzEy.html"><img src="images/pathout/pathout4.jpg" alt="pathout4"/></a></div>
+						</div>
+						<nav>
+							<span class="bb-current"></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</nav>
+					</li>
+					<li>
+						<h3>Sudoku</h3>
+						<div class="bb-bookblock">
+							<div class="bb-item"><a href=""><img src="images/sudoku/sudoku1.jpg" alt="image01"/></a></div>
+							<div class="bb-item"><a href=""><img src="images/sudoku/sudoku2.jpg" alt="image02"/></a></div>
+						</div>
+						<nav>
+							<span class="bb-current"></span>
+							<span></span>
+						</nav>
+					</li>
+					<li>
+						<h3>Chinese Tea</h3>
+						<div class="bb-bookblock">
+							<div class="bb-item"><a href=""><img src="images/tea/flash1.jpg" alt="image01"/></a></div>
+							<div class="bb-item"><a href=""><img src="images/tea/flash2.png" alt="image02"/></a></div>
+							<div class="bb-item"><a href=""><img src="images/tea/flash3.png" alt="image03"/></a></div>
+							<div class="bb-item"><a href=""><img src="images/tea/flash4.png" alt="image04"/></a></div>
+						</div>
+						<nav>
+							<span class="bb-current"></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</nav>
+					</li>
+					<li>
+						<a href="http://webprojects.eecs.qmul.ac.uk/jp093030/"><h3>Web Experiment</h3></a>
+						<div class="bb-bookblock">
+							<div class="bb-item"><a href="http://webprojects.eecs.qmul.ac.uk/jp093030/"><img src="images/web/web1.jpg" alt="image1"/></a></div>
+							<div class="bb-item"><a href="http://webprojects.eecs.qmul.ac.uk/jp093030/"><img src="images/web/web2.jpg" alt="image2"/></a></div>
+							<div class="bb-item"><a href="http://webprojects.eecs.qmul.ac.uk/jp093030/"><img src="images/web/web3.jpg" alt="image3"/></a></div>
+							<div class="bb-item"><a href="http://webprojects.eecs.qmul.ac.uk/jp093030/"><img src="images/web/web4.jpg" alt="image4"/></a></div>
+							<div class="bb-item"><a href="http://webprojects.eecs.qmul.ac.uk/jp093030/"><img src="images/web/web5.jpg" alt="image5"/></a></div>
+						</div>
+						<nav>
+							<span class="bb-current"></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</nav>
+					</li>
+				</ul>
+			</div>
+		</div><!-- /container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script type="text/javascript">
+			var Page = (function() {
+
+				var $grid = $( '#bb-custom-grid' );
+
+				return {
+					init : function() {
+						$grid.find( 'div.bb-bookblock' ).each( function( i ) {
+							
+							var $bookBlock = $( this ),
+								$nav = $bookBlock.next().children( 'span' ),
+								bb = $bookBlock.bookblock( {
+									speed : 600,
+									shadows : false
+								} );
+								
+							// add navigation events
+							$nav.each( function( i ) {
+								$( this ).on( 'click touchstart', function( event ) {
+									var $dot = $( this );
+									$nav.removeClass( 'bb-current' );
+									$dot.addClass( 'bb-current' );
+									$bookBlock.bookblock( 'jump', i + 1 );
+									return false;
+								} );
+							} );
+							
+							// add swipe events
+							$bookBlock.children().on( {
+								'swipeleft' : function( event ) {
+									$bookBlock.bookblock( 'next' );
+									return false;
+								},
+								'swiperight' : function( event ) {
+									$bookBlock.bookblock( 'prev' );
+									return false;
+								}
+
+							} );
+							
+						} );
+					}
+				};
+
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>
+	</body>
+</html>
