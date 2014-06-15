@@ -7,7 +7,7 @@ ul.bb-custom-grid {
 	list-style: none;
 	margin: 0 auto 30px auto;
 	padding: 0;
-	max-width: 900px;
+	max-width: 800px;
 }
 
 /* Micro clearfix hack by Nicolas Gallagher http://nicolasgallagher.com/micro-clearfix-hack/ */
