@@ -63,6 +63,35 @@
 			</div>
 
 		</div><!-- /container -->
+
+		<div class="hidden">
+			<script type="text/javascript">
+				var images = new Array()
+				function preload() {
+					for (i = 0; i < preload.arguments.length; i++) {
+						images[i] = new Image()
+						images[i].src = preload.arguments[i]
+					}
+				}
+				preload(
+					"images_big/pathout/pathout1.jpg",
+					"images_big/pathout/pathout2.jpg",
+					"images_big/pathout/pathout3.jpg",
+					"images_big/pathout/pathout4.jpg",
+					"images_big/sudoku/sudoku1.jpg",
+					"images_big/sudoku/sudoku2.jpg",
+					"images_big/tea/flash1.jpg",
+					"images_big/tea/flash2.jpg",
+					"images_big/tea/flash3.jpg",
+					"images_big/web/web1.jpg",
+					"images_big/web/web2.jpg",
+					"images_big/web/web3.jpg",
+					"images_big/web/web4.jpg",
+					"images_big/web/web5.jpg"
+				)
+			</script>
+		</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="js/jquerypp.custom.js"></script>
 		<script src="js/jquery.bookblock.js"></script>
